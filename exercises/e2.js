@@ -1,4 +1,4 @@
-// EXERCISE 2
+ // EXERCISE 2
 // for every number between 0 and max find all numbers that have square roots that are integers
 // getNumbersWithSquareRoots(17) => [0, 1, 4, 9, 16]
 
