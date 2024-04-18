@@ -7,14 +7,15 @@ import { bankAccounts } from "../data/data";
 
 export function getClientWithNoMoney(array) {
   let result = [];
-  for (let i = 0; i < bankAccounts.length; i++) {
-    if (bankAccounts.balance == 0) {
-      result.push(bankAccounts.name);
+  for (let elem in bankAccounts) {
+    if (bankAccounts[elem].balance == 0) {
+      result.push(bankAccounts[elem].name);
     }
   }
   return result;
-
 }
+
+getClientWithNoMoney();
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-6"
