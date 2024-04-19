@@ -4,10 +4,29 @@
 // Array example: bankAccounts in /data/data.js
 // getClientWithLeastBalance(bankAccounts) => [{ name: 'SomeName', balance: 32, ... }]
 
+import { bankAccounts } from "../data/data";
+
 export function getClientWithLeastPositiveBalance(array) {
-  // Your code goes here...
-  
+  let lowestBalance = Infinity;
+  let result = [];
+  for (let elem in bankAccounts) {
+    if (bankAccounts[elem].balance < lowestBalance && bankAccounts[elem].balance > 0) {
+      lowestBalance = bankAccounts[elem].balance;
+      result = [];
+      result.push(bankAccounts[elem]);
+    } else if (bankAccounts[elem].balance === lowestBalance) {
+      result.push(bankAccounts[elem]);
+    } 
+  }
+  return result;
 }
+
+getClientWithLeastPositiveBalance();
+
+//Based on the questions parameters, this block of code returns the lowest non-zero balance AND an empty array if all balances are equal to or lower than zero...
+//Please explain why it doesn't pass all the tests?
+
+
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-7"
