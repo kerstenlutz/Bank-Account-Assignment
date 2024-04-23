@@ -3,10 +3,22 @@
 // Array example: bankAccounts in /data/data.js
 // getClientsWithLetterInName(bankAccounts, 'e') => ['Kevin', 'Steven', ...]
 
-export function getClientsWithLetterInName(array, letter) {
-  // Your code goes here...
+import { bankAccounts } from "../data/data";
 
+export function getClientsWithLetterInName(array, letter) {
+  let result = [];
+  for (let elem in bankAccounts) {
+    if (bankAccounts[elem].name.includes(letter)) {
+      result.push(bankAccounts[elem].name);
+    }
+    else if (bankAccounts[elem].name.includes(letter.toUpperCase())) {
+      result.push(bankAccounts[elem].name);
+    }
+  }
+  return result;
 }
+
+getClientsWithLetterInName(bankAccounts, 'e');
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-10"
