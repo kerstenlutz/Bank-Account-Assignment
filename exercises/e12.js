@@ -4,12 +4,22 @@
 // Array example: bankAccounts in /data/data.js
 // getAllDepositsGreaterThanOneHundred(bankAccounts) => [3432, 43242.34, 23432]
 
-export function getAllDepositsGreaterThanOneHundred(array) {
-  // Your code goes here...
+import { bankAccounts } from "../data/data";
 
+export function getAllDepositsGreaterThanOneHundred(array) {
+  let result = [];
+
+  for (let elem in bankAccounts) {
+    for (let i in bankAccounts[elem].deposits) {
+      if (bankAccounts[elem].deposits[i] > 100) {
+        result.push(bankAccounts[elem].deposits[i]);
+      }
+    }
+  }
+  return result;
 }
 
-
+getAllDepositsGreaterThanOneHundred(bankAccounts);
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-12"
