@@ -6,9 +6,18 @@
 // NOTE: You can NOT use the array.flat() method in your code
 
 export function flatArrays(array) {
-  // Your code goes here...
+  let result = [];
 
+  for (let i = 0; i < array.length; i++) {
+    let current = array[i];
+    for (let j = 0; j < current.length; j++) {
+      result.push(current[j]);
+    }
+  }
+  return result;
 }
+
+flatArrays([['d', 'r'], 'z', 'b', ['f', 'y']]);
 
 
 
