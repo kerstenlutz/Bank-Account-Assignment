@@ -4,10 +4,18 @@
 // concatArrays(['d', 'r', 'a'], ['f', 'y']) => ['d', 'r', 'a', 'f', 'y']
 // NOTE: You can NOT use the array.concat() method in your code
 
-export function concatArrays(arr1, arr2) {
-  // Your code goes here...
 
+export function concatArrays(arr1, arr2) {
+  let result = arr1;
+  for (let i = 0; i < arr2.length; i++) {
+    result.push(arr2[i]);
+  }
+return result;
 }
+
+concatArrays(['d', 'r', 'a'], ['f', 'y']);
+
+//If possible, please explain why this function did not pass all the tests...
 
 
 
