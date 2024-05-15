@@ -5,12 +5,12 @@
 // Array example: bankAccounts in /data/data.js
 // getClientsWithWrongBalance(bankAccounts) => [{ name: 'Name1', balance: 32, ... }, { name: 'Name2', balance: 3523, ... }]
 
-import { bankAccounts } from "../data/data";
 
 export function getClientsWithWrongBalance(array) {
   let result = [];
   let sumDeposits = 0;
   let sumWith = 0;
+  let bankAccounts = array;
   
   for (let elem in bankAccounts) {
     sumDeposits = 0;
@@ -31,7 +31,6 @@ export function getClientsWithWrongBalance(array) {
   return result;
 }
 
-getClientsWithWrongBalance();
 
 
 // === TEST YOURSELF ===

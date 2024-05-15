@@ -4,9 +4,10 @@
 // Array example: bankAccounts in /data/data.js
 // getClientWithLeastBalance(bankAccounts) => [{ name: 'SomeName', balance: 32, ... }]
 
-import { bankAccounts } from "../data/data";
+
 
 export function getClientWithLeastPositiveBalance(array) {
+  const bankAccounts = array;
   let lowestBalance = Infinity;
   let result = [];
   for (let elem in bankAccounts) {
@@ -14,14 +15,15 @@ export function getClientWithLeastPositiveBalance(array) {
       lowestBalance = bankAccounts[elem].balance;
       result = [];
       result.push(bankAccounts[elem]);
-    } else if (bankAccounts[elem].balance === lowestBalance) {
-      result.push(bankAccounts[elem]);
     } 
   }
   return result;
 }
 
-getClientWithLeastPositiveBalance();
+
+
+
+
 
 //Based on the questions parameters, this block of code returns the lowest non-zero balance AND an empty array if all balances are equal to or lower than zero...
 //Please explain why it doesn't pass all the tests?

@@ -6,14 +6,16 @@
 
 
 export function concatArrays(arr1, arr2) {
-  let result = arr1;
-  for (let i = 0; i < arr2.length; i++) {
-    result.push(arr2[i]);
+  let combined = [];
+  for (let i = 0; i < arr1.length; i++) {
+    combined.push(arr1[i]);
   }
-return result;
+  for (let j = 0; j < arr2.length; j++) {
+    combined.push(arr2[j]);
+  }
+  return combined;
 }
 
-concatArrays(['d', 'r', 'a'], ['f', 'y']);
 
 //If possible, please explain why this function did not pass all the tests...
 
