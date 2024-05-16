@@ -6,25 +6,25 @@
 // NOTE: You MUST use double/nested FOR loop to solve this exercise. The array.includes() method is NOT allowed.
 
 export function separateNamesWithAFromRest(array) {
-  let resultOne = [];
-  let resultTwo = [];
-for (let i = 0; i < array.length; i++) {
-  let nameSplit = array[i].split('');
-  for (let j = 0; j < nameSplit.length; j++) {
-    if (nameSplit[j] == 'a') {
-      resultOne.push(array[i]);
+  let namesWithA = [];
+  let namesWithoutA = [];
+
+  for (let name of array) {
+    let hasA = false;
+    for (let i = 0; i < name.length; i++) {
+      if (name[i] === 'a' || name[i] === 'A') {
+        hasA = true;
+      }
     }
-  } if (array[i].indexOf('a') <= -1) {
-    resultTwo.push(array[i]);
+    if (hasA) {
+      namesWithA.push(name);
+    } else {
+      namesWithoutA.push(name);
+    }
   }
-}
-  return[
-    resultOne,
-    resultTwo
-  ];
+  return [namesWithA, namesWithoutA];
 }
 
-separateNamesWithAFromRest(['jon', 'alice', 'andrew', 'mark', 'jimmy']);
 
 
 // === TEST YOURSELF ===
